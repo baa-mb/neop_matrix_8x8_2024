@@ -173,7 +173,7 @@ function test(snr: number, txt: string) {
 
     // basic.showNumber(neo_strip_anzahl)
 
-    neop_schreibe_zch(0, txt, randColor(),false)
+    neop_schreibe_zch(snr, txt, randColor(),false)
 
 
 }
@@ -223,11 +223,14 @@ function neop_schreibe_zch(snr: number, zch_str: string = "A", color: number,scr
     let zeichen_matrix2: Array<number> = []
     let mx2 = arr_neop_settings[snr].hwMatrix[0];
     let my2 = arr_neop_settings[snr].hwMatrix[1];
+
+    
     // let my2 = zch_str.length;
     // arr_neop_settings[snr].hwMatrix[1] = my2 * 6; //bei einem zeichen
+    my2=8;
     init_strip(snr, 0, 0)
     // arr_neop_strips[snr].showRainbow(1, 360)
-    basic.showString(my2)
+    basic.showNumber(my2)
 
     let is_type2 = 0; //buchstabe
     sss = snr;
@@ -328,13 +331,13 @@ neo_strip_anzahl = 1
 init_alphabet();
 
 default_strip_data()
-basic.showIcon(IconNames.No)
+basic.showIcon(IconNames.Yes)
 // test();
 const vers = 2021;
 // test("ÄÖÜäöüabcdefghijklmnopqrstuvwxyz");
 // test("fgjkpqyz");
 // test("ABCabcöäü")
-test(1, "Aber das ist falsch. ")
+test(0, "Aber das ist falsch. ")
 // test(1, "Aber das ist falsch. ")
 // test("Das ist eine gute Möglichkeite * ");
 
